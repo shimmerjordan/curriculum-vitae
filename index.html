@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Qiaodan Ju - Personal Resume</title>
-	<meta name="description" content="Qiaodan Ju - Personal Resume">
+	<title>鞠桥丹 - Personal Resume</title>
+	<meta name="description" content="Qiaodan Ju / 鞠桥丹 - Personal Resume">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 
@@ -15,6 +15,14 @@
 	<link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<style>
+		.lang-switch { margin-top: 14px; margin-bottom: 20px; display: flex; gap: 6px; align-items: center; }
+		.lang-switch .btn { padding: 8px 14px; min-height: 34px; line-height: 1.1; margin-right: 0; display: inline-flex; align-items: center; justify-content: center; }
+		.lang-switch .btn.active { background: #304cfd; color: #fff; border-color: #304cfd; }
+		.lang-zh, .lang-en { display: none; }
+		.lang-visible { display: block; }
+		.resume-highlight { background: transparent; border-left: 0; padding: 0; margin-bottom: 16px; }
+	</style>
 
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -59,22 +67,26 @@
 		<div class="header-inner d-flex align-items-start flex-column">
 			<a href="index.html"><img src="images/logo.png" alt="Qiaodan Ju" /></a>
 			<a href="index.html" class="site-title dot mt-3">Qiaodan Ju</a>
-			<span class="site-slogan">U3D/UE Engine Engineer</span>
-			<span class="site-slogan">R&D Engineer</span>
-			<span class="site-slogan">Software Engineer</span>
+			<span class="site-slogan" data-i18n="slogan_1">Robotics Middleware Engineer</span>
+			<span class="site-slogan" data-i18n="slogan_2">Full Stack Engineer</span>
+			<span class="site-slogan" data-i18n="slogan_3">Software Engineer</span>
 			
 			<!-- navigation menu -->
 			<nav>
 				<ul class="vertical-menu scrollspy">
-					<li><a href="#home" class="active"><i class="icon-home"></i>Home</a></li>
-					<li><a href="#about"><i class="icon-user"></i>About</a></li>
+					<li><a href="#home" class="active"><i class="icon-home"></i><span data-i18n="nav_home">Home</span></a></li>
+					<li><a href="#about"><i class="icon-user"></i><span data-i18n="nav_about">About</span></a></li>
 					<!-- <li><a href="#services"><i class="icon-bulb"></i>Services</a></li> -->
-					<li><a href="#resume"><i class="icon-graduation"></i>Resume</a></li>
-					<li><a href="#works"><i class="icon-grid"></i>Works</a></li>
-					<li><a href="#blog"><i class="icon-pencil"></i>Blog</a></li>
-					<li><a href="#contact"><i class="icon-phone"></i>Contact</a></li>
+					<li><a href="#resume"><i class="icon-graduation"></i><span data-i18n="nav_resume">Resume</span></a></li>
+					<li><a href="#works"><i class="icon-grid"></i><span data-i18n="nav_works">Works</span></a></li>
+					<li><a href="#blog"><i class="icon-pencil"></i><span data-i18n="nav_blog">Blog</span></a></li>
+					<li><a href="#contact"><i class="icon-phone"></i><span data-i18n="nav_contact">Contact</span></a></li>
 				</ul>
 			</nav>
+			<div class="lang-switch">
+				<button type="button" class="btn btn-default btn-sm lang-toggle active" data-lang="zh">中文</button>
+				<button type="button" class="btn btn-default btn-sm lang-toggle" data-lang="en">EN</button>
+			</div>
 			
 			<!-- footer -->
 			<div class="footer mt-auto">
@@ -100,18 +112,18 @@
 		<!-- section hero -->
 		<section class="hero background parallax shadow-dark d-flex align-items-center" id="home" data-image-src="images/hero.jpg">
 			<div class="cta mx-auto mt-2">
-				<h1 class="mt-0 mb-4">I’m Qiaodan Ju<span class="dot"></span></h1>
-				<p class="mb-4">We work in the darkness to serve the light.</p>
-				<a href="#about" class="btn btn-default btn-lg mr-3"><i class="icon-grid"></i>View Details</a>
+				<h1 class="mt-0 mb-4"><span data-i18n="hero_title">I’m Qiaodan Ju</span><span class="dot"></span></h1>
+				<p class="mb-4" data-i18n="hero_subtitle">We work in the darkness to serve the light.</p>
+				<a href="#about" class="btn btn-default btn-lg mr-3"><i class="icon-grid"></i><span data-i18n="hero_view">View Details</span></a>
 				<div class="spacer d-md-none d-lg-none d-sm-none" data-height="10"></div>
-				<a href="mailto:shimmerjordan@dingtalk.com?subject=For Communication&cc=Carbon Copy&subject=For details about Qiaodan Ju&body=Write your contents here." class="btn btn-border-light btn-lg"><i class="icon-envelope"></i>Further Communication</a>
+				<a href="mailto:shimmerjordan@dingtalk.com?subject=For Communication&cc=Carbon Copy&subject=For details about Qiaodan Ju&body=Write your contents here." class="btn btn-border-light btn-lg"><i class="icon-envelope"></i><span data-i18n="hero_contact">Further Communication</span></a>
 			</div>
 			<div class="overlay"></div>
 		</section>
 
 		<!-- section about -->
 		<section id="about" class="shadow-blue white-bg padding">
-			<h3 class="section-title">About Me</h3>
+			<h3 class="section-title" data-i18n="about_title">About Me</h3>
 			<div class="spacer" data-height="50"></div>
 
 			<div class="row">
@@ -119,30 +131,33 @@
 					<img src="images/about.png" alt="about" />
 				</div>
 				<div class="col-md-9">
-					<h2 class="mt-4 mt-md-0 mb-4">Hello,</h2>
-					<p class="mb-0">I am Qiaodan Ju, Software Engineer from Jiangsu, China. I am a growing noooooob, temporarily.</p>
+					<h2 class="mt-4 mt-md-0 mb-4" data-i18n="about_hello">Hello,</h2>
+					<p class="mb-0 lang-zh lang-visible">我是鞠桥丹，软件研发工程师，当前聚焦机器人集成部署、HMI 产品研发以及 AI 驱动研发流程落地。</p>
+					<p class="mb-0 lang-en">I am Qiaodan Ju, a software engineer focusing on robotics deployment, HMI product engineering, and AI-driven R&D workflows.</p>
 					<div class="row my-4">
 						<div class="col-md-6">
-							<p class="mb-2">Name: <span class="text-dark">Qiaodan Ju</span></p>
-							<p class="mb-0">Birthday: <span class="text-dark">26 Feburary, 1999</span></p>
+							<p class="mb-2"><span data-i18n="about_name">Name</span>: <span class="text-dark">Qiaodan Ju</span></p>
+							<p class="mb-0"><span data-i18n="about_birthday">Birthday</span>: <span class="text-dark">26 Feburary, 1999</span></p>
 						</div>
 						<div class="col-md-6 mt-2 mt-md-0 mt-sm-2">
-							<p class="mb-2">Location: <span class="text-dark">Shanghai, China</span></p>
-							<p class="mb-0">Email: <span class="text-dark">shimmerjordan@dingtalk.com</span></p>
+							<p class="mb-2"><span data-i18n="about_location">Location</span>: <span class="text-dark">Shanghai, China</span></p>
+							<p class="mb-0"><span data-i18n="about_email">Email</span>: <span class="text-dark">shimmerjordan@dingtalk.com</span></p>
 						</div>
 					</div>
-					<div class="btn btn-default mr-3" onclick="window.open('https://www.myqnapcloud.com/share/77di2220o61n821qu07uax44_72632f39707o2023q3x398zz8ded39ik#!/home/docs4job', '_blank')" ><i class="icon-cloud-download"></i>Download CV</div>
-					<a href="mailto:shimmerjordan@dingtalk.com?subject=For Communication&cc=Carbon Copy&subject=For details about Qiaodan Ju&body=Write your contents here." class="btn btn-alt mt-2 mt-md-0 mt-xs-2"><i class="icon-envelope"></i>Contact me</a>
+					<a id="download-cv-btn" class="btn btn-default mr-3" href="中文CV_Ju%20Qiaodan.pdf" download="中文CV_Ju Qiaodan.pdf"><i class="icon-cloud-download"></i><span data-i18n="download_cv">Download CV</span></a>
+					<a id="preview-cv-btn" class="btn btn-default mr-3 mt-2 mt-md-0 mt-xs-2" href="中文CV_Ju%20Qiaodan.pdf" target="_blank"><i class="icon-eye"></i><span data-i18n="preview_cv">Preview PDF</span></a>
+					<a href="mailto:shimmerjordan@dingtalk.com?subject=For Communication&cc=Carbon Copy&subject=For details about Qiaodan Ju&body=Write your contents here." class="btn btn-alt mt-2 mt-md-0 mt-xs-2"><i class="icon-envelope"></i><span data-i18n="about_contact">Contact me</span></a>
 				</div>
 			</div>
 		</section>
 
 		<!-- section skills -->
 		<section id="skills" class="shadow-blue white-bg padding">
-			<h3 class="section-title">My skills</h3>
+			<h3 class="section-title" data-i18n="skills_title">My skills</h3>
 			<div class="spacer" data-height="50"></div>
 			
-			<p class="mb-0">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+			<p class="mb-0 lang-zh lang-visible">熟悉机器人中间件集成、C++、Python、ROS、UE5 引擎定制；熟练掌握自动化搭建、XXClaw 部署与优化，深度使用 AI 工具。</p>
+			<p class="mb-0 lang-en">Skilled in robotics middleware integration, C++, Python, ROS, and UE5 customization. Strong in automation setup, XXClaw optimization, and practical AI-tool usage.</p>
 
 			<div class="row mt-5">
 
@@ -208,7 +223,7 @@
 			</div>
 			<div class="spacer" data-height="50"></div>
 			
-			<h3 class="section-title"><a href="https://github.com/shimmerjordan/github-statis">Github statistic:</a></h3>
+			<h3 class="section-title"><a href="https://github.com/shimmerjordan/github-statis"><span data-i18n="github_stats">Github statistic:</span></a></h3>
 	
 			<div class="row mt-5">
 				<div class="col-md-6">
@@ -227,47 +242,113 @@
 		
 			<h2 class="section-title">Qiaodan Ju</h2>
 			<ul class="list-inline portfolio-info mb-0 mt-4">
-                <li class="list-inline-item"><i class="icon-user"></i>R&D Engineer</li>
+                <li class="list-inline-item"><i class="icon-user"></i><span data-i18n="resume_role">R&D Engineer</span></li>
                 <li class="list-inline-item"><i class="icon-envelope"></i>shimmerjordan@dingtalk.com</li>
                 <li class="list-inline-item"><i class="icon-link"></i><a href="https://shimmerjordan.eu.org" target="_blank">shimmerjordan.eu.org</a></li>
             </ul>
 			<div class="spacer" data-height="20"></div>
 			
-			<h3 class="section-title">Education</h3>
+			<h3 class="section-title" data-i18n="education_title">Education</h3>
 			<div class="spacer" data-height="40"></div>
 
 			<!-- section Work Experience -->
-			<h3 class="section-title">Work Experience</h3>
+			<h3 class="section-title" data-i18n="work_title">Work Experience</h3>
 			<div class="spacer" data-height="40"></div>
 			<!-- timeline -->
 			<div class="timeline">
+				<div class="entry">
+					<div class="title">
+						<span class="lang-zh lang-visible">2025/07 - 至今</span>
+						<span class="lang-en">07/2025 - Present</span>
+					</div>
+					<div class="body">
+						<h4 class="mt-0 lang-zh lang-visible">星猿哲科技（XYZ Robotics）- MAX/HMI 研发</h4>
+						<h4 class="mt-0 lang-en">XYZ Robotics - MAX/HMI Engineer</h4>
+						<div class="resume-highlight lang-zh lang-visible">
+							<p>星猿哲科技（XYZ Robotics）- MAX/HMI 研发（2025/07 - 至今）</p>
+							<ul>
+								<li>主导 Qt 版 HMI 的版本迭代，搭建装卸车、拆码垛一体的用户操作平台；适配 GRPC、HTTP 等多协议机械臂作业系统，接入 CSM、MAX 等自研平台。</li>
+								<li>推动新版 HMI3 前后端设计与开发，使用 Vibe coding 构建 Web HMI 前端与 Python 后端；并使用 Rust 封装 Max，逐步剥离冗余模块并优化内存高位模块。</li>
+								<li>主导机器人集成部署平台 MAX 研发，嵌入虚拟环境推流渲染、日志侦错回放、虚拟示教器等工具，支撑卸码一体与矩阵作业等复杂场景。</li>
+								<li>搭建 HMI 与 MAX 版本迭代 CI/CD，打通需求分析到 feature 落地的 AI 全链路接入，并建设缺陷管理、冒烟问题/微小缺陷自动提单与 AI 修复系统。</li>
+								<li>深度参与多现场项目定制和问题闭环，推动宝洁自动垛型码垛、小米车 0 装配流水线、德国 ZARA Home 拆垛装车一体、美国 UNIS 特殊 SKU 码垛等项目部署。</li>
+							</ul>
+						</div>
+						<div class="resume-highlight lang-en">
+							<p>XYZ Robotics - MAX/HMI Engineering (2025/07 - Present)</p>
+							<ul>
+								<li>Led Qt-based HMI iteration and delivered an integrated UI platform for loading, unloading and depalletizing operations, with multi-protocol robotic arm integration (GRPC/HTTP) and in-house platform connection (CSM/MAX).</li>
+								<li>Drove HMI3 frontend/backend redesign using Vibe coding (Web frontend + Python backend), while refactoring Max with Rust and optimizing memory-heavy modules.</li>
+								<li>Led MAX deployment-platform R&D with virtual-stream rendering, log replay for debugging, and virtual teach pendant tooling for complex matrix operation scenarios.</li>
+								<li>Built CI/CD for HMI and MAX releases, connected AI workflows from requirement analysis to feature delivery, and introduced cloud-based defect management plus AI-assisted ticketing/fix loops.</li>
+								<li>Supported multi-site deployment and troubleshooting across projects including P&G, Xiaomi, ZARA Home (Germany), and UNIS (US).</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				
 				<div class="entry">
 					<div class="title">
-						<span>02/2023 - 06/2025</span>
+						<span class="lang-zh lang-visible">2023/01 - 2025/06</span>
+						<span class="lang-en">01/2023 - 06/2025</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Huawei Technologies Co., Ltd</h4>
-						<h6>终端云</h6>
-						<p>负责多款DAU>500w头部手游（包括QQ飞车、魂斗罗、原神等）的引擎/客户端鸿蒙化，首发完整度95%</p>
-						<li>完成vulkan、vsync、折叠屏开合等渲染模块适配；</li>
-						<li>主导SDK（wwise、glcoud、webcamera等）及出包CICD的鸿蒙适配、重编译与集成;</li>
-						<li>解决卡帧发热关键问题，设计并接入CPU负载均衡策略，达成高压测试稳定60帧，峰值温度下降7℃</li>
-						<p>深度参与UTU重点模块：动画、脚本、视口渲染模块的迁移，完成AngryBot所有场景的95%资产及特效迁移</p>
-						<li>设计并落地高并发导入导出框架，下沉高可拓展Unity实例序列化插件，支持十万级资产数量30s导出；</li>
-						<li>负责动画状态机，解决在U3状态机的导出以及UE侧嵌套状态机、分层状态机等兼容性问题；</li>
-						<li>主导UE侧U3脚本运行环境的方案设计与实现，利用IL注入实现U3属性/类的UE侧反射，优化胶水层实现以解决性能问题，最终Mono环境运行时与xlua脚本实现方案综合性能损失不超过2%；</li>
-						<li>负责UE相机系统的改造，以及 CineMachine 插件及其周边脚本的UE侧适配。实现CineMachine逻辑在UE侧的100%复用以及周边模块的90%复用。在UE重建的视口渲染模块中减少技美与客户端的85%工作量。</li>
-
-
-						<h6>无线</h6>
-						<p>主导自动测试框架中故障模式的开发与AI驱动集成</p>
-						<li>设计异步分析与冗余剪枝架构，在此框架下落地基站配置残留、脚本劣化、证书服务异常等故障模式。</li>
-						<li>主导AI接入故障模式，设计Xgboost + RAG双头分析模型。基于Celery部署优先级驱动的多进程并发推理流水线，能在12h内完成工厂3w用例的失败（峰值30%失败）分析。综合节省人力50%，防线成功率与稳定性提升60%，获研究所QCC</li>
-						<p>承担防线工厂的可视化门户前后端及测试框架公共API的开发</p>
-						<li>承载工厂用例执行详情、防线健康监控的回显，并以版本和迭代周期为颗粒度提供入厂退厂等功能;</li>
-						<li>设计并落地节电策略，端到端部署负载均衡解决方案。工作日日均节电5k度，休息日日均9k度。</li>
-						<li>负责自动测试框架中公共API开发，包括云台与机械手等设备的通信与控制接口暴露。</li>
+						<h4 class="mt-0 lang-zh lang-visible">华为技术有限公司 - 研发工程师 B</h4>
+						<h4 class="mt-0 lang-en">Huawei Technologies Co., Ltd - R&D Engineer B</h4>
+						<div class="resume-highlight lang-zh lang-visible">
+							<p>华为技术有限公司 - 研发工程师 B（2023/01 – 2025/06）</p>
+							<ul>
+								<li>终端云（2024/04-2025/06）：负责多款 DAU&gt;500w 头部手游（QQ 飞车、魂斗罗、原神等）的引擎/客户端鸿蒙化，首发完整度 95%。</li>
+								<li>无线（2023/01-2024/04）：主导自动测试框架故障模式开发与 AI 驱动集成，承担可视化门户前后端与公共 API 开发。</li>
+							</ul>
+						</div>
+						<div class="resume-highlight lang-en">
+							<p>Huawei Technologies - R&amp;D Engineer B (2023/01 - 2025/06)</p>
+							<ul>
+								<li>Terminal Cloud (2024/04-2025/06): delivered HarmonyOS adaptation for multiple top mobile games (QQ Speed, Contra, Genshin Impact, etc.), with 95% launch completeness.</li>
+								<li>Wireless (2023/01-2024/04): led fault-mode development and AI integration in automation testing, while building visualization portal and shared APIs.</li>
+							</ul>
+						</div>
+						<div class="lang-zh lang-visible">
+							<h6>终端云</h6>
+							<p>负责多款DAU&gt;500w头部手游（包括QQ飞车、魂斗罗、原神等）的引擎/客户端鸿蒙化，首发完整度95%</p>
+							<li>完成vulkan、vsync、折叠屏开合等渲染模块适配；</li>
+							<li>主导SDK（wwise、glcoud、webcamera等）及出包CICD的鸿蒙适配、重编译与集成;</li>
+							<li>解决卡帧发热关键问题，设计并接入CPU负载均衡策略，达成高压测试稳定60帧，峰值温度下降7℃</li>
+							<p>深度参与UTU重点模块：动画、脚本、视口渲染模块的迁移，完成AngryBot所有场景的95%资产及特效迁移</p>
+							<li>设计并落地高并发导入导出框架，下沉高可拓展Unity实例序列化插件，支持十万级资产数量30s导出；</li>
+							<li>负责动画状态机，解决在U3状态机的导出以及UE侧嵌套状态机、分层状态机等兼容性问题；</li>
+							<li>主导UE侧U3脚本运行环境的方案设计与实现，利用IL注入实现U3属性/类的UE侧反射，优化胶水层实现以解决性能问题，最终Mono环境运行时与xlua脚本实现方案综合性能损失不超过2%；</li>
+							<li>负责UE相机系统的改造，以及 CineMachine 插件及其周边脚本的UE侧适配。实现CineMachine逻辑在UE侧的100%复用以及周边模块的90%复用。在UE重建的视口渲染模块中减少技美与客户端的85%工作量。</li>
+							<h6>无线</h6>
+							<p>主导自动测试框架中故障模式的开发与AI驱动集成</p>
+							<li>设计异步分析与冗余剪枝架构，在此框架下落地基站配置残留、脚本劣化、证书服务异常等故障模式。</li>
+							<li>主导AI接入故障模式，设计Xgboost + RAG双头分析模型。基于Celery部署优先级驱动的多进程并发推理流水线，能在12h内完成工厂3w用例的失败（峰值30%失败）分析。综合节省人力50%，防线成功率与稳定性提升60%，获研究所QCC</li>
+							<p>承担防线工厂的可视化门户前后端及测试框架公共API的开发</p>
+							<li>承载工厂用例执行详情、防线健康监控的回显，并以版本和迭代周期为颗粒度提供入厂退厂等功能;</li>
+							<li>设计并落地节电策略，端到端部署负载均衡解决方案。工作日日均节电5k度，休息日日均9k度。</li>
+							<li>负责自动测试框架中公共API开发，包括云台与机械手等设备的通信与控制接口暴露。</li>
+						</div>
+						<div class="lang-en">
+							<h6>Terminal Cloud</h6>
+							<p>Led HarmonyOS adaptation of engine/client for multiple top mobile games (QQ Speed, Contra, Genshin Impact, etc.), with 95% launch completeness.</p>
+							<li>Adapted rendering modules including Vulkan, VSync, and foldable-screen transitions.</li>
+							<li>Led HarmonyOS adaptation, rebuild, and integration for SDKs (wwise, glcloud, webcamera, etc.) and packaging CICD.</li>
+							<li>Resolved frame-drop and thermal issues by designing and integrating CPU load-balancing strategy, achieving stable 60 FPS under stress tests and reducing peak temperature by 7°C.</li>
+							<p>Deeply contributed to UTU core migration (animation, scripting, viewport rendering), completing migration for 95% assets and effects in AngryBot scenarios.</p>
+							<li>Designed and delivered a high-concurrency import/export framework with extensible Unity instance serialization plugin, supporting 100k-scale assets with 30s export.</li>
+							<li>Owned animation state-machine compatibility across U3 export and UE nested/layered state machines.</li>
+							<li>Led U3 script runtime design on UE side, implemented UE-side reflection for U3 attributes/classes via IL injection, and optimized glue layer to keep overall runtime overhead below 2% versus mono + xlua schemes.</li>
+							<li>Owned UE camera-system refactor and CineMachine plugin/script adaptation, achieving 100% reuse of CineMachine core logic and 90% reuse of surrounding modules, reducing 85% workload for tech-art and client teams in rebuilt UE viewport rendering module.</li>
+							<h6>Wireless</h6>
+							<p>Led failure-mode development and AI integration in automation testing framework.</p>
+							<li>Designed asynchronous analysis and redundancy-pruning architecture, landing failure modes such as residual base-station configuration, script degradation, and certificate-service exceptions.</li>
+							<li>Led AI integration with an XGBoost + RAG dual-head model; built Celery-based priority-driven multiprocess inference pipeline that analyzed failures in 30k factory cases (up to 30% failure peak) within 12 hours, saving 50% manpower and improving success rate/stability by 60% (awarded institute QCC).</li>
+							<p>Developed full-stack visualization portal and shared APIs for the factory defense line.</p>
+							<li>Delivered execution-detail and health-monitoring visualization with version/iteration-based plant in/out capabilities.</li>
+							<li>Designed and deployed power-saving and end-to-end load-balancing strategies, saving ~5k kWh on workdays and ~9k kWh on rest days.</li>
+							<li>Developed shared APIs for device communication/control including PTZ units and robotic manipulators.</li>
+						</div>
 					</div>
 				</div>
 			
@@ -276,7 +357,7 @@
 			<div class="spacer" data-height="50"></div>
 			
 			<!-- section Education -->
-			<h3 class="section-title">Education</h3>
+			<h3 class="section-title" data-i18n="education_title">Education</h3>
 			<div class="spacer" data-height="40"></div>
 
 			<!-- timeline -->
@@ -284,24 +365,30 @@
 				
 				<div class="entry">
 					<div class="title">
-						<span>09/2021 - 01/2023</span>
+						<span class="lang-zh lang-visible">2021/08 - 2023/01</span>
+						<span class="lang-en">09/2021 - 01/2023</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Master of Science in Data Science and Machine Learning</h4>
-						<p>GPA: 4.33 / 5.00 (93.3 / 100.0),  
+						<h4 class="mt-0 lang-zh lang-visible">新加坡国立大学 - 大数据与机器学习硕士</h4>
+						<h4 class="mt-0 lang-en">Master of Science in Data Science and Machine Learning</h4>
+						<p class="lang-zh lang-visible">GPA: 4.28 / 5.0 (92.8 / 100)，TOP 7%，MERIT。</p>
+						<p class="lang-en">GPA: 4.33 / 5.00 (93.3 / 100.0)</p>
 					</div>
 				</div>
 				
 				<div class="entry">
 					<div class="title">
-						<span>09/2017 - 06/2021</span>
+						<span class="lang-zh lang-visible">2017/09 - 2021/06</span>
+						<span class="lang-en">09/2017 - 06/2021</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Bachelor of Engineering in Software Engineering, Southeastern University, China</h4>
-						<p>GPA: 3.9199 / 5.0000 (89.199 / 100.000),  
-						<p>CET-6: 610</p>
-						<p>IELTS: 7.0</p>
-						<p>GRE: 331 + 3.5</p>
+						<h4 class="mt-0 lang-zh lang-visible">东北大学 - 软件工程学士</h4>
+						<h4 class="mt-0 lang-en">Bachelor of Engineering in Software Engineering, Southeastern University, China</h4>
+						<p class="lang-zh lang-visible">GPA: 3.91 / 5.0 (89.1 / 100)；IELTS: 7.0；GRE: 331 + 3.5。</p>
+						<p class="lang-en">GPA: 3.9199 / 5.0000 (89.199 / 100.000)</p>
+						<p class="lang-en">CET-6: 610</p>
+						<p class="lang-en">IELTS: 7.0</p>
+						<p class="lang-en">GRE: 331 + 3.5</p>
 					</div>
 				</div>
 				
@@ -311,7 +398,7 @@
 			
 			
 			<!-- section internship experience -->
-			<h3 class="section-title">Internship Experience</h3>
+			<h3 class="section-title" data-i18n="internship_title">Internship Experience</h3>
 			<div class="spacer" data-height="40"></div>
 
 			<!-- timeline -->
@@ -319,75 +406,87 @@
 				<div class="entry">
 					<div class="title">
 						<span>05/2022 - 11/2022</span>
-						<p>Transformer-Bumblebee Algorithm Intern </p>
+						<p class="lang-zh lang-visible">Transformer-Bumblebee 算法实习生</p>
+						<p class="lang-en">Transformer-Bumblebee Algorithm Intern</p>
 					</div>
 					<div class="body">
 						<h4 class="mt-0">Megvii-inc, Beijing, China</h4>
-						
-						<li>Working on a 3D lane detection model to build an easy-to-deploy network that works efficiently end-to-end. 
-						Used ResNeXt18 as the backbone and connected the backbone and the neck of the dcn_fpn structure via an SA module to enhance global feature awareness.</li>
-						<li>Participating in the improvement of the prediction head, 
-						the clustering strategy of key-points in post-processing is designed to draw lane lines under RV segmentally with different joint_points as bridging points. 
-						The lane lines are merged by certain strategies including IoU, offset, etc. to give the model robustness in the diverging lane lines and thus replace the unfriendly RIM solution deployed in condlanenet.</li>
-						<li>Write data pre-processing and GT annotation pipeline for curvelane, CULane, etc. Distributed training based on MMCV framework, 
-						as well as test scripts and asynchronous upload of bad cases to s3 for visual analysis and checkpoints via a mounted ws2 multi-thread. Versioning. </li>
+						<div class="lang-zh lang-visible">
+							<li>参与 3D 车道线检测模型研发，构建低部署压力且端到端高效的网络结构。</li>
+							<li>改进预测头与后处理，设计 key-points 聚类与分段拼接策略，增强分叉车道场景鲁棒性并优化 RIM 方案。</li>
+							<li>编写 curvelane/CULane 数据预处理与标注流水线，基于 MMCV 做分布式训练、坏例异步上传和版本化分析。</li>
+						</div>
+						<div class="lang-en">
+							<li>Worked on 3D lane detection to build an easy-to-deploy and efficient end-to-end network.</li>
+							<li>Improved prediction head and post-processing with key-point clustering and segmented lane-joining strategy for diverging lanes.</li>
+							<li>Built data preprocessing/annotation pipelines for curvelane and CULane, plus distributed training and bad-case async analysis tooling on MMCV.</li>
+						</div>
 					</div>
 				</div>
 				
 				<div class="entry">
 					<div class="title">
 						<span>11/2021 - 03/2022</span>
-						<p>Part-time Research Assistance</p>
+						<p class="lang-zh lang-visible">兼职科研助理</p>
+						<p class="lang-en">Part-time Research Assistance</p>
 					</div>
 					<div class="body">
 						<h4 class="mt-0">NUS Next++ Lab</h4>
-						
-						<li>Involved in the research of the Image Caption task network model, 
-						mainly in the backbone refactoring optimization, the algorithm design of the caption evaluation and the redesign of an adaptive and efficient optimizer.</li>
-						<li>In the Backbone module, Inception-V3 was improved with reference to DLA34's tree aggregation idea to provide more global awareness and maintain a healthy number of participants. 
-The evaluation method of the original Greedy Search is replaced by the Beam Search strategy, 
-which generates a more biased prediction result in favour of selecting the best.</li>
-						<li>An optimiser between Lazy Adam and Adam is redesigned and combined with AdamW for regular term tuning. 
-						The problem of Lazy Adam not updating first- and second-order momentum at zero gradient is addressed by making it applicable to the case of sparse variable indexing during RNN training, and for unsampled embedding plus penalty coefficients is also taken into account. After passing through the neck of dcn_fpn it is fed into the RNN head with RA module, using the GRU cell as a carrier. In a preliminary demo using the VizWiz dataset, 
-						its BLEU_1 reaches 50 and BLEU_n can basically reach around 30. </li>
+						<div class="lang-zh lang-visible">
+							<li>参与图生文任务研究，主要负责 backbone 重构优化、caption 评估算法设计以及高效优化器重设计。</li>
+							<li>参考 DLA34 树聚合思想改进 Inception-V3，并将 Greedy Search 替换为 Beam Search，提升预测质量。</li>
+							<li>重设计介于 Lazy Adam 与 Adam 之间的优化器并结合 AdamW；在 VizWiz 初步实验中获得 BLEU_1 50+、BLEU_n 约 30 的结果。</li>
+						</div>
+						<div class="lang-en">
+							<li>Contributed to image captioning research, including backbone refactoring, caption evaluation design, and adaptive optimizer redesign.</li>
+							<li>Improved Inception-V3 with DLA34-style aggregation and replaced Greedy Search with Beam Search for better predictions.</li>
+							<li>Redesigned an optimizer between Lazy Adam and Adam with AdamW; early VizWiz demo reached BLEU_1 above 50 and BLEU_n around 30.</li>
+						</div>
 					</div>
 				</div>
 				
 				<div class="entry">
 					<div class="title">
 						<span>11/2020 – 02/2021</span>
-						<p>Full Stack Developer</p>
+						<p class="lang-zh lang-visible">全栈开发</p>
+						<p class="lang-en">Full Stack Developer</p>
 					</div>
 					<div class="body">
 						<h4 class="mt-0">Neusoft Technology Co., China</h4>
-						
-						<p>Please refer to the link for details of the project open source code: <a href="https://github.com/shimmerjordan/sz-education" target="_blank">https://github.com/shimmerjordan/sz-education</a></p>
-						<li>The system is designed to improve the efficiency of online teaching and learning and includes an online learning sub-system and a back-end CMS, 
-						which contains modules related to online courses, online examinations, grade analysis and grade management, intelligent paper assembly, tenant management and other related functions. 
-						The system uses an improved genetic algorithm to improve usability and scientific performance.</li>
-						<li>The system framework is based on SpringCloud and integrates monitoring components such as Consul, 
-						Spring Boot Admin and Zipkin. Spring Cloud OAuth2 and JWT are used to support multi-tenant SSO login and authentication, 
-						and RabbitMQ is used to maintain the message queue. In addition, BCryptPasswordEncoder method is used for irreversible password encryption. 
-						Combined with Redis for partial request caching and filtering, the system was tested to maintain a concurrency of over 10kQPS when deployed locally in a package.</li>
-						<li>The system was packaged and deployed on a local Ubuntu 20.04 test machine and deployed to the public network via intranet penetration.</li>
+						<p class="lang-zh lang-visible">开源代码：<a href="https://github.com/shimmerjordan/sz-education" target="_blank">https://github.com/shimmerjordan/sz-education</a></p>
+						<p class="lang-en">Open-source reference: <a href="https://github.com/shimmerjordan/sz-education" target="_blank">https://github.com/shimmerjordan/sz-education</a></p>
+						<div class="lang-zh lang-visible">
+							<li>参与在线教学系统研发，覆盖在线课程、考试、成绩分析与管理、智能组卷、租户管理等模块。</li>
+							<li>基于 SpringCloud 构建系统，集成 Consul、Spring Boot Admin、Zipkin、OAuth2/JWT、RabbitMQ 与 Redis，支撑多租户 SSO 和高并发。</li>
+							<li>系统在本地 Ubuntu 20.04 部署并完成公网联通测试。</li>
+						</div>
+						<div class="lang-en">
+							<li>Built an online education system covering courses, examinations, score analysis/management, intelligent paper assembly, and multi-tenant features.</li>
+							<li>Implemented SpringCloud architecture with Consul, Spring Boot Admin, Zipkin, OAuth2/JWT, RabbitMQ, and Redis for multi-tenant SSO and high concurrency.</li>
+							<li>Packaged and deployed on Ubuntu 20.04 with public-network access testing.</li>
+						</div>
 					</div>
 				</div>
 				<div class="entry">
 					<div class="title">
 						<span>05/2020 – 08/2020</span>
-						<p>Full Stack Developer</p>
+						<p class="lang-zh lang-visible">全栈开发</p>
+						<p class="lang-en">Full Stack Developer</p>
 					</div>
 					<div class="body">
 						<h4 class="mt-0">Chinasoft International, China</h4>
-						
-						<p>For details, please refer to the link. <a href="https://github.com/shimmerjordan/Lexian-Mall" target="_blank">https://github.com/shimmerjordan/Lexian-Malls</a></p>
-						<li>Participated in the development of Lexian-Mall supermarket fresh food wholesale system based on SpringCloud, including client, applet and CMS backend management system. 
-						Mainly responsible for the SSO module for users under the login authentication microservice, the real name authentication function module and the shopping cart management module under the order microservice, 
-						and the development of some functions under the order module.</li>
-						<li>Developed the client and CMS system web front-end and applet pages based on Uni-app and Vue respectively, and used SpringBoot to develop each functional module. 
-						We used Redis to solve the problem of unshared sessions and implemented a simple message queue to speed up the response to requests and improve concurrency performance. 
-						In addition, Zuul was used to intercept and filter illegal requests from requesting users to intercept malicious attempts at cryptography.</li>
-						<li>The application was packaged and deployed to a cloud server after JVM tuning and passed a 10kQPS stress test in a test environment.</li>
+						<p class="lang-zh lang-visible">项目链接：<a href="https://github.com/shimmerjordan/Lexian-Mall" target="_blank">https://github.com/shimmerjordan/Lexian-Malls</a></p>
+						<p class="lang-en">Project reference: <a href="https://github.com/shimmerjordan/Lexian-Mall" target="_blank">https://github.com/shimmerjordan/Lexian-Malls</a></p>
+						<div class="lang-zh lang-visible">
+							<li>参与 Lexian-Mall 生鲜批发系统研发，覆盖客户端、小程序与 CMS 后台。</li>
+							<li>负责登录认证微服务下 SSO、实名模块及订单微服务购物车模块等功能开发。</li>
+							<li>基于 Uni-app/Vue/SpringBoot 实现前后端能力，结合 Redis、消息队列与 Zuul 提升性能与安全，测试环境通过 10kQPS 压测。</li>
+						</div>
+						<div class="lang-en">
+							<li>Contributed to Lexian-Mall wholesale system development across client, mini-program, and CMS backend.</li>
+							<li>Implemented SSO, real-name authentication, shopping-cart, and order-related modules in microservice architecture.</li>
+							<li>Built frontend with Uni-app/Vue and backend with SpringBoot; improved performance/security via Redis, message queue, and Zuul, with 10kQPS stress-test pass.</li>
+						</div>
 					</div>
 				</div>
 				
@@ -395,20 +494,52 @@ which generates a more biased prediction result in favour of selecting the best.
 			</div>
 			
 			<!-- section project -->
-			<h3 class="section-title">Projects</h3>
+			<h3 class="section-title" data-i18n="projects_title">Projects</h3>
 			<div class="spacer" data-height="40"></div>
 
 			<!-- timeline -->
 			<div class="timeline">
 				<div class="entry">
 					<div class="title">
+						<span>05/2026 - 05/2026</span>
+					</div>
+					<div class="body">
+						<h4 class="mt-0 lang-zh lang-visible">家庭仓储语音管家（Vibe Coding 产品）</h4>
+						<h4 class="mt-0 lang-en">Home Storage Voice Assistant (Vibe Coding Product)</h4>
+						<p class="lang-zh lang-visible"><i>shimmerjordan/home_repo_git：家用收纳管理系统</i></p>
+						<p class="lang-en"><i>shimmerjordan/home_repo_git: a home storage management system</i></p>
+						<ul class="lang-zh lang-visible">
+							<li>设计并实现端到端家庭仓储系统，基于 Docker Compose 完全本地化部署。</li>
+							<li>通过多 LLM provider 抽象层 + tool calling/JSON 双模式 + token-overlap 上下文摘要，实现 token 成本可控的 AI 调用。</li>
+							<li>接入飞书 WebSocket Stream Mode 规避家庭 NAS 无公网环境限制，支持语音唤醒、物品位置查询及 Three.js 3D 场景高亮。</li>
+							<li>实现 Function Call 需求转换（如生病需求转药物需求），并配备 SQLite 自动迁移、CSV 向后兼容、字段级审计与环形缓冲日志。</li>
+						</ul>
+						<ul class="lang-en">
+							<li>Designed and delivered an end-to-end home storage system with fully local deployment using Docker Compose.</li>
+							<li>Implemented multi-LLM provider abstraction, tool-calling/JSON dual modes, and token-overlap context summarization for cost-controlled AI usage.</li>
+							<li>Integrated Feishu WebSocket Stream Mode to bypass no-public-network NAS constraints, with voice wakeup, item-location query, and Three.js 3D highlighting.</li>
+							<li>Added Function Call intent conversion, SQLite auto-migration, backward-compatible CSV import, field-level audit logs, and ring-buffer plus rotating logs.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="entry">
+					<div class="title">
 						<span>10/2021 – 12/2021</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">User Debt Behaviour Forecasting - <a href="https://www.kaggle.com/subhamjain/loan-prediction-based-on-customer-behavior" target="_blank">kaggle competition</a></h4>
-						<i>For details, please refer to the link. <a href="https://github.com/shimmerjordan/loan-pred-customer-behavior" target="_blank">https://github.com/shimmerjordan/loan-pred-customer-behavior</a></i>
-						<li>This (unbalanced) dataset is studied from supervised as well as unsupervised learning directions, focusing on feature engineering, modelling prediction and dimensionality reduction, and user clustering respectively. The main objective is to build highly accurate predictive models of user lending behaviour.</li>
-						<li>The XGClassifier was used to train the optimal ratio of undersampling and oversampling to better address the data imbalance. Feature selection was performed by PCA and Variational Auto-encoder, and a pipeline was established for GB, RF and Xgboost respectively, and the Xgb model with a training set of 0.97 f1-score and a test set of 0.89 f1-score was obtained by model selection. In addition, k-means was used to classify the users for model interpretation.</li>
+						<h4 class="mt-0 lang-zh lang-visible">用户负债行为预测 - <a href="https://www.kaggle.com/subhamjain/loan-prediction-based-on-customer-behavior" target="_blank">Kaggle 竞赛</a></h4>
+						<h4 class="mt-0 lang-en">User Debt Behaviour Forecasting - <a href="https://www.kaggle.com/subhamjain/loan-prediction-based-on-customer-behavior" target="_blank">kaggle competition</a></h4>
+						<i class="lang-zh lang-visible">项目链接：<a href="https://github.com/shimmerjordan/loan-pred-customer-behavior" target="_blank">https://github.com/shimmerjordan/loan-pred-customer-behavior</a></i>
+						<i class="lang-en">For details, please refer to the link. <a href="https://github.com/shimmerjordan/loan-pred-customer-behavior" target="_blank">https://github.com/shimmerjordan/loan-pred-customer-behavior</a></i>
+						<div class="lang-zh lang-visible">
+							<li>围绕非平衡数据集，分别从监督/非监督方向进行特征工程、建模预测、降维和用户聚类，目标是建立高准确度借贷行为预测模型。</li>
+							<li>采用欠采样+过采样、PCA/VAE、GB/RF/XGBoost pipeline 等策略，最终获得训练集 0.97、测试集 0.89 的 F1 表现，并结合 KMeans 完成可解释性分析。</li>
+						</div>
+						<div class="lang-en">
+							<li>This unbalanced dataset was studied via supervised and unsupervised approaches, focusing on feature engineering, prediction modeling, dimensionality reduction, and user clustering.</li>
+							<li>Used undersampling/oversampling, PCA/VAE, and GB/RF/XGBoost pipelines; achieved 0.97 F1 on train and 0.89 F1 on test, with K-means for interpretation.</li>
+						</div>
 					</div>
 				</div>
 				
@@ -417,9 +548,12 @@ which generates a more biased prediction result in favour of selecting the best.
 						<span>09/2019 – 12/2019</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Automated Palletizing System</h4>
-						<p><i>Description: Realized machine’s automatic identification to assess the box’s height and size, placed the messy boxes in object region orderly using mechanical arms.</i></p>
-						<li>The coding of the movement logic of the robot arm of the automatic palletizing system allows the arm to send requests and responses to the corresponding algorithm module after it has obtained the commands to achieve automatic palletizing and loading.</li>
+						<h4 class="mt-0 lang-zh lang-visible">自动码垛系统</h4>
+						<h4 class="mt-0 lang-en">Automated Palletizing System</h4>
+						<p class="lang-zh lang-visible"><i>描述：实现对箱体尺寸与高度的自动识别，并通过机械臂完成杂乱箱体的有序码放。</i></p>
+						<p class="lang-en"><i>Description: Realized machine’s automatic identification to assess box height and size, then arranged boxes orderly via robotic arms.</i></p>
+						<p class="lang-zh lang-visible">实现机械臂运动逻辑编码，使其在接收指令后可与算法模块完成请求响应闭环，从而实现自动码垛与装载。</p>
+						<p class="lang-en">Implemented robot-arm motion logic so that commands can trigger request/response collaboration with algorithm modules for automatic palletizing and loading.</p>
 						
 					</div>
 				</div>
@@ -428,18 +562,23 @@ which generates a more biased prediction result in favour of selecting the best.
 						<span>10/2018 - 11/2019</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Image Identification Based Upon Progressive Machine Learning</h4>
-						<p><i>Description: Applied progressive identification techniques to the image classification problems of bags and suitcases, increased the efficiency of image classification in case of ensuring accuracy.</i></p>
+						<h4 class="mt-0 lang-zh lang-visible">渐进式机器学习图像识别</h4>
+						<h4 class="mt-0 lang-en">Image Identification Based Upon Progressive Machine Learning</h4>
+						<p class="lang-zh lang-visible"><i>描述：将渐进式识别用于箱包图像分类，在保证准确率前提下提升分类效率。</i></p>
+						<p class="lang-en"><i>Description: Applied progressive identification to bag/suitcase image classification for higher efficiency with maintained accuracy.</i></p>
 						<p><i>Wu Jianxing, Zeng Dexin, Ju Qiaodan, Chang Zixuan and Yu Hai*, “Progressive Image Recognition Method and Its Application in Security Inspection Machines”, Current Chinese Computer Science 2021; 1(1) . https://doi.org/10.2174/2665997201999201208210819</i></p>
-						<li>Participate in the design of classification networks and the construction of datasets.</li>
-						<li>The initial dataset is obtained through a crawler script on an e-commerce platform, 
-						and then combined with manual GT annotation through data cleaning and augmentation and other pipelines. A progressive strategy is used to segment individual images to simulate the form of progressive input.</li>
-						<li>The VGG16 is optimised with reference to the BN proposed by InceptionV2 and the ResNet residual linking, 
-						and the CategoricalCrossentropy is improved by combining the focal loss proposed by RetinaNet, 
-						for different proportions of segmented data from the same image source, the small proportion of misclassified cut data will have a larger penalty factor, 
-						as a way to control the convergence efficiency of the model.</li>
-						<li>Ultimately, with only 50% of the images input, 
-						it is able to obtain a 50% efficiency gain at a cost of less than 1.5% precision loss (precision == 90.35%).</li>
+						<div class="lang-zh lang-visible">
+							<li>参与分类网络设计与数据集构建。</li>
+							<li>通过爬虫采集初始数据，结合清洗、增强与人工 GT 标注构建训练集，并通过渐进式切片模拟输入。</li>
+							<li>在 VGG16 基础上融合 BN/残差思想并改进损失函数，控制不同切分比例下误分类样本惩罚因子，提升收敛效果。</li>
+							<li>最终在仅输入 50% 图像的情况下，以低于 1.5% 精度损失换取约 50% 效率提升（precision 90.35%）。</li>
+						</div>
+						<div class="lang-en">
+							<li>Participated in classification-network design and dataset construction.</li>
+							<li>Built initial dataset via crawler scripts plus cleaning/augmentation/manual GT annotation, then simulated progressive input by segmented images.</li>
+							<li>Optimized VGG16 with BN/residual ideas and improved loss design to control convergence under different segmentation ratios.</li>
+							<li>Achieved ~50% efficiency gain with &lt;1.5% precision loss when using only 50% image input (precision 90.35%).</li>
+						</div>
 					</div>
 				</div>
 				<div class="entry">
@@ -447,11 +586,20 @@ which generates a more biased prediction result in favour of selecting the best.
 						<span>10/2017 - 12/2018</span>
 					</div>
 					<div class="body">
-						<h4 class="mt-0">Study on Electricity Generating Performance by Burning RDF</h4>
-						<p><i>Description: Developed research on RDF’s composition proportion under optimal burning performance.</i></p>
-						<li>Analysis of the current status of research and directions for improvement in the performance of RDF fuels for power generation.</li>
-						<li>The coarse material of rdf is made into combustible materials with different mixture ratios by controlled variable method.</li>
-						<li>Based on experimental statistics, the combustion characteristics of rdf blends are analysed in terms of weight loss temperature and ash analysis.</li>
+						<h4 class="mt-0 lang-zh lang-visible">RDF 焚烧发电性能研究</h4>
+						<h4 class="mt-0 lang-en">Study on Electricity Generating Performance by Burning RDF</h4>
+						<p class="lang-zh lang-visible"><i>描述：研究 RDF 不同配比下的燃烧性能与发电效率。</i></p>
+						<p class="lang-en"><i>Description: Studied RDF composition ratios under optimal combustion performance.</i></p>
+						<div class="lang-zh lang-visible">
+							<li>分析 RDF 发电研究现状并提出优化方向。</li>
+							<li>采用控制变量法制备不同混配比例的 RDF 可燃样本。</li>
+							<li>基于实验统计，从失重温度与灰分分析角度评估燃烧特性。</li>
+						</div>
+						<div class="lang-en">
+							<li>Analyzed current RDF power-generation research and improvement directions.</li>
+							<li>Prepared combustible RDF samples with different mixture ratios via controlled variables.</li>
+							<li>Evaluated combustion characteristics using weight-loss temperature and ash analysis.</li>
+						</div>
 					</div>
 				</div>
 				
@@ -460,7 +608,7 @@ which generates a more biased prediction result in favour of selecting the best.
 			<div class="spacer" data-height="40"></div>
 
 			<!-- section AWARDS & HONORS -->
-			<h3 class="section-title">AWARDS & HONORS</h3>
+			<h3 class="section-title" data-i18n="awards_title">AWARDS & HONORS</h3>
 			<div class="spacer" data-height="40"></div>
 
 			<!-- timeline -->
@@ -500,26 +648,26 @@ which generates a more biased prediction result in favour of selecting the best.
 
 		<!-- section works -->
 		<section id="works" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Projects</h3>
+			<h3 class="section-title" data-i18n="projects_title">Projects</h3>
 			<div class="spacer" data-height="50"></div>
 
 			<!-- portfolio filter (desktop) -->
 			<ul class="portfolio-filter list-inline">
-				<li class="current list-inline-item" data-filter="*">All Projects</li>
-				<li class="list-inline-item" data-filter=".branding">Software Engineering</li>
-				<li class="list-inline-item" data-filter=".creative">Machine Learning</li>
-				<li class="list-inline-item" data-filter=".design">Design</li>
-				<li class="list-inline-item" data-filter=".video">Other</li>
+				<li class="current list-inline-item" data-filter="*" data-i18n="works_all">All Projects</li>
+				<li class="list-inline-item" data-filter=".branding" data-i18n="works_sw">Software Engineering</li>
+				<li class="list-inline-item" data-filter=".creative" data-i18n="works_ml">Machine Learning</li>
+				<li class="list-inline-item" data-filter=".design" data-i18n="works_design">Design</li>
+				<li class="list-inline-item" data-filter=".video" data-i18n="works_other">Other</li>
 			</ul>
 
 			<!-- portfolio filter (mobile) -->
 			<div class="pf-filter-wrapper mb-4">
 				<select class="portfolio-filter-mobile">
-					<option value="*">Everything</option>
-					<option value=".creative">Software Engineering</option>
-					<option value=".video">Machine Learning</option>
-					<option value=".design">Design</option>
-					<option value=".branding">Other</option>
+					<option value="*" data-i18n="works_everything">Everything</option>
+					<option value=".creative" data-i18n="works_sw">Software Engineering</option>
+					<option value=".video" data-i18n="works_ml">Machine Learning</option>
+					<option value=".design" data-i18n="works_design">Design</option>
+					<option value=".branding" data-i18n="works_other">Other</option>
 				</select>
 			</div>
 
@@ -531,8 +679,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">NLP</h4>
-								<span class="term">Art, Creative</span>
+								<h4 class="title" data-i18n="work_item_1_title">NLP</h4>
+								<span class="term" data-i18n="work_item_1_term">Art, Creative</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -548,8 +696,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Online-Mall</h4>
-								<span class="term">Creative, Design</span>
+								<h4 class="title" data-i18n="work_item_2_title">Online-Mall</h4>
+								<span class="term" data-i18n="work_item_2_term">Creative, Design</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -565,8 +713,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Work Space</h4>
-								<span class="term">Branding</span>
+								<h4 class="title" data-i18n="work_item_3_title">Work Space</h4>
+								<span class="term" data-i18n="work_item_3_term">Branding</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -582,8 +730,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Creative Bulb</h4>
-								<span class="term">Creative</span>
+								<h4 class="title" data-i18n="work_item_4_title">Creative Bulb</h4>
+								<span class="term" data-i18n="work_item_4_term">Creative</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -599,8 +747,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">API</h4>
-								<span class="term">Art, Branding</span>
+								<h4 class="title" data-i18n="work_item_5_title">API</h4>
+								<span class="term" data-i18n="work_item_5_term">Art, Branding</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -616,8 +764,8 @@ which generates a more biased prediction result in favour of selecting the best.
 					<a href="work-single.html">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Minimal Art</h4>
-								<span class="term">Design, Creative</span>
+								<h4 class="title" data-i18n="work_item_6_title">Minimal Art</h4>
+								<span class="term" data-i18n="work_item_6_term">Design, Creative</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
@@ -632,7 +780,7 @@ which generates a more biased prediction result in favour of selecting the best.
 			
 			<!-- more button -->
 			<div class="load-more text-center mt-4">
-				<a href="javascript:" class="btn btn-default"><i class="fas fa-circle-notch"></i> Load more</a>
+				<a href="javascript:" class="btn btn-default"><i class="fas fa-circle-notch"></i> <span data-i18n="load_more">Load more</span></a>
 				<!-- numbered pagination (hidden for infinite scroll) -->
 				<ul class="portfolio-pagination list-inline d-none">
 					<li class="list-inline-item">1</li>
@@ -649,7 +797,7 @@ which generates a more biased prediction result in favour of selecting the best.
 	
 		<!-- section social works -->
 		<section id="testimonials" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Social Works</h3>
+			<h3 class="section-title" data-i18n="social_title">Social Works</h3>
 			<div class="spacer" data-height="97"></div>
 
 			<div class="row testimonials-wrapper">
@@ -709,9 +857,9 @@ which generates a more biased prediction result in favour of selecting the best.
 
 		<!-- section blog -->
 		<section id="blog" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Partial posts</h3>
+			<h3 class="section-title" data-i18n="blog_title">Partial posts</h3>
 			<div class="spacer" data-height="10"></div>
-			<h4>Go <a href="https://blog.shimmerjordan.eu.org" target="_blank">MY BLOG SITE</a> for more details.</h4>
+			<h4><span data-i18n="blog_desc_prefix">Go</span> <a href="https://blog.shimmerjordan.eu.org" target="_blank" data-i18n="blog_site">MY BLOG SITE</a> <span data-i18n="blog_desc_suffix">for more details.</span></h4>
 			<div class="row">
 				
 				<div class="col-md-4">
@@ -719,13 +867,13 @@ which generates a more biased prediction result in favour of selecting the best.
 					<div class="blog-item">
 						<div class="thumb">
 							<a href="https://blog.shimmerjordan.eu.org/tags/Algorithms/">
-								<span class="category">Algorithm</span>
+								<span class="category" data-i18n="blog_cat_1">Algorithm</span>
 							</a>
 							<a href="https://blog.shimmerjordan.eu.org/2020/12/08/addTwoNumbers/">
 								<img src="images/blog/1.jpg" alt="blog-title" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/12/08/addTwoNumbers/" target="_blank">What is the best solution to Add Two Numbers</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/12/08/addTwoNumbers/" target="_blank" data-i18n="blog_title_1">What is the best solution to Add Two Numbers</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
 							<li class="list-inline-item">08 December, 2020</li>
 							<li class="list-inline-item">Qiaodan Ju</li>
@@ -738,13 +886,13 @@ which generates a more biased prediction result in favour of selecting the best.
 					<div class="blog-item">
 						<div class="thumb">
 							<a href="https://blog.shimmerjordan.eu.org/tags/Machine-Learning/">
-								<span class="category">Machine Learning</span>
+								<span class="category" data-i18n="blog_cat_2">Machine Learning</span>
 							</a>
 							<a href="https://blog.shimmerjordan.eu.org/2020/11/08/WatermarkRemoval/">
 								<img src="images/blog/2.jpg" alt="blog-title" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/11/08/WatermarkRemoval/" target="_blank">A Possible Way to Remove Watermark perfectly</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/11/08/WatermarkRemoval/" target="_blank" data-i18n="blog_title_2">A Possible Way to Remove Watermark perfectly</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
 							<li class="list-inline-item">08 Novemeber, 2020</li>
 							<li class="list-inline-item">Qiaodan Ju</li>
@@ -757,13 +905,13 @@ which generates a more biased prediction result in favour of selecting the best.
 					<div class="blog-item">
 						<div class="thumb">
 							<a href="https://blog.shimmerjordan.eu.org/tags/">
-								<span class="category">Tech</span>
+								<span class="category" data-i18n="blog_cat_3">Tech</span>
 							</a>
 							<a href="https://blog.shimmerjordan.eu.org/2020/11/06/MLAComparison/">
 								<img src="images/blog/3.jpg" alt="blog-title" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/11/06/MLAComparison/" target="_blank">Comparison between Machine Learning Algorithms</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://blog.shimmerjordan.eu.org/2020/11/06/MLAComparison/" target="_blank" data-i18n="blog_title_3">Comparison between Machine Learning Algorithms</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
 							<li class="list-inline-item">06 November, 2020</li>
 							<li class="list-inline-item">Qiaodan Ju</li>
@@ -777,7 +925,7 @@ which generates a more biased prediction result in favour of selecting the best.
 
 		<!-- section contact -->
 		<section id="contact" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Get in touch</h3>
+			<h3 class="section-title" data-i18n="contact_title">Get in touch</h3>
 			<div class="spacer" data-height="50"></div>
 
 			<div class="row">
@@ -787,21 +935,21 @@ which generates a more biased prediction result in favour of selecting the best.
 					<div class="contact-info mb-5">
 						<i class="icon-phone"></i>
 						<div class="details">
-							<h5>Phone</h5>
+							<h5 data-i18n="contact_phone">Phone</h5>
 							<span>Sorry, 404</span>
 						</div>
 					</div>
 					<div class="contact-info mb-5">
 						<i class="icon-envelope"></i>
 						<div class="details">
-							<h5>Email address</h5>
+							<h5 data-i18n="contact_email">Email address</h5>
 							<span>shimmerjordan@dingtalk.com</span>
 						</div>
 					</div>
 					<div class="contact-info">
 						<i class="icon-location-pin"></i>
 						<div class="details">
-							<h5>Location</h5>
+							<h5 data-i18n="contact_location">Location</h5>
 							<span>Sorry, 502</span>
 						</div>
 					</div>
@@ -817,7 +965,7 @@ which generates a more biased prediction result in favour of selecting the best.
 							<div class="column col-md-6">
 								<!-- Name input -->
 								<div class="form-group">
-									<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Your name" required="required" data-error="Name is required.">
+									<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Your name" required="required" data-error="Name is required." data-i18n-placeholder="form_name">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
@@ -825,7 +973,7 @@ which generates a more biased prediction result in favour of selecting the best.
 							<div class="column col-md-6">
 								<!-- Email input -->
 								<div class="form-group">
-									<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email address" required="required" data-error="Email is required.">
+									<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email address" required="required" data-error="Email is required." data-i18n-placeholder="form_email">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
@@ -833,7 +981,7 @@ which generates a more biased prediction result in favour of selecting the best.
 							<div class="column col-md-12">
 								<!-- Email input -->
 								<div class="form-group">
-									<input type="text" class="form-control" id="InputSubject" name="InputSubject" placeholder="Subject" required="required" data-error="Subject is required.">
+									<input type="text" class="form-control" id="InputSubject" name="InputSubject" placeholder="Subject" required="required" data-error="Subject is required." data-i18n-placeholder="form_subject">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
@@ -841,13 +989,13 @@ which generates a more biased prediction result in favour of selecting the best.
 							<div class="column col-md-12">
 								<!-- Message textarea -->
 								<div class="form-group">
-									<textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" placeholder="Message" required="required" data-error="Message is required."></textarea>
+									<textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" placeholder="Message" required="required" data-error="Message is required." data-i18n-placeholder="form_message"></textarea>
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 						</div>
 
-						<button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default" onclick="sendMail()"><i class="icon-paper-plane"></i>Send Message</button><!-- Send Button -->
+						<button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default" onclick="sendMail()"><i class="icon-paper-plane"></i><span data-i18n="send_message">Send Message</span></button><!-- Send Button -->
 
 					</form>
 					<!-- Contact Form end -->
@@ -879,6 +1027,189 @@ which generates a more biased prediction result in favour of selecting the best.
 <script src="js/contact.js"></script>
 <script src="js/validator.js"></script>
 <script src="js/custom.js"></script>
+<script>
+	(function () {
+		var i18nMap = {
+			zh: {
+				slogan_1: "机器人中间件工程师",
+				slogan_2: "全栈工程师",
+				slogan_3: "软件工程师",
+				nav_home: "首页",
+				nav_about: "关于",
+				nav_resume: "简历",
+				nav_works: "作品",
+				nav_blog: "博客",
+				nav_contact: "联系",
+				hero_title: "我是鞠桥丹",
+				hero_subtitle: "我们在黑暗中前行，只为守护光明。",
+				hero_view: "查看详情",
+				hero_contact: "进一步沟通",
+				about_title: "关于我",
+				about_hello: "你好，",
+				about_name: "姓名",
+				about_birthday: "生日",
+				about_location: "地点",
+				about_email: "邮箱",
+				download_cv: "下载简历（PDF）",
+				preview_cv: "预览 PDF",
+				about_contact: "联系我",
+				skills_title: "专业技能",
+				github_stats: "GitHub 统计：",
+				resume_role: "研发工程师",
+				education_title: "教育经历",
+				work_title: "工作经历",
+				internship_title: "实习经历",
+				projects_title: "项目经历",
+				awards_title: "奖项与荣誉",
+				works_all: "全部项目",
+				works_sw: "软件工程",
+				works_ml: "机器学习",
+				works_design: "设计",
+				works_other: "其他",
+				works_everything: "全部",
+				load_more: "加载更多",
+				social_title: "社会经历",
+				blog_title: "精选文章",
+				blog_desc_prefix: "前往",
+				blog_site: "我的博客",
+				blog_desc_suffix: "查看更多内容。",
+				work_item_1_title: "自然语言处理",
+				work_item_1_term: "艺术，创意",
+				work_item_2_title: "在线商城",
+				work_item_2_term: "创意，设计",
+				work_item_3_title: "工作空间",
+				work_item_3_term: "品牌",
+				work_item_4_title: "创意灯泡",
+				work_item_4_term: "创意",
+				work_item_5_title: "接口工程",
+				work_item_5_term: "艺术，品牌",
+				work_item_6_title: "极简艺术",
+				work_item_6_term: "设计，创意",
+				blog_cat_1: "算法",
+				blog_cat_2: "机器学习",
+				blog_cat_3: "技术",
+				blog_title_1: "Add Two Numbers 的最佳解法是什么",
+				blog_title_2: "一种可行的去水印方案",
+				blog_title_3: "机器学习算法对比",
+				contact_title: "联系方式",
+				contact_phone: "电话",
+				contact_email: "邮箱",
+				contact_location: "地点",
+				form_name: "你的名字",
+				form_email: "邮箱地址",
+				form_subject: "主题",
+				form_message: "内容",
+				send_message: "发送消息"
+			},
+			en: {
+				slogan_1: "Robotics Middleware Engineer",
+				slogan_2: "Full Stack Engineer",
+				slogan_3: "Software Engineer",
+				nav_home: "Home",
+				nav_about: "About",
+				nav_resume: "Resume",
+				nav_works: "Works",
+				nav_blog: "Blog",
+				nav_contact: "Contact",
+				hero_title: "I’m Qiaodan Ju",
+				hero_subtitle: "We work in the darkness to serve the light.",
+				hero_view: "View Details",
+				hero_contact: "Further Communication",
+				about_title: "About Me",
+				about_hello: "Hello,",
+				about_name: "Name",
+				about_birthday: "Birthday",
+				about_location: "Location",
+				about_email: "Email",
+				download_cv: "Download CV (PDF)",
+				preview_cv: "Preview PDF",
+				about_contact: "Contact me",
+				skills_title: "My skills",
+				github_stats: "Github statistic:",
+				resume_role: "R&D Engineer",
+				education_title: "Education",
+				work_title: "Work Experience",
+				internship_title: "Internship Experience",
+				projects_title: "Projects",
+				awards_title: "Awards & Honors",
+				works_all: "All Projects",
+				works_sw: "Software Engineering",
+				works_ml: "Machine Learning",
+				works_design: "Design",
+				works_other: "Other",
+				works_everything: "Everything",
+				load_more: "Load more",
+				social_title: "Social Works",
+				blog_title: "Partial posts",
+				blog_desc_prefix: "Go",
+				blog_site: "MY BLOG SITE",
+				blog_desc_suffix: "for more details.",
+				work_item_1_title: "NLP",
+				work_item_1_term: "Art, Creative",
+				work_item_2_title: "Online-Mall",
+				work_item_2_term: "Creative, Design",
+				work_item_3_title: "Work Space",
+				work_item_3_term: "Branding",
+				work_item_4_title: "Creative Bulb",
+				work_item_4_term: "Creative",
+				work_item_5_title: "API",
+				work_item_5_term: "Art, Branding",
+				work_item_6_title: "Minimal Art",
+				work_item_6_term: "Design, Creative",
+				blog_cat_1: "Algorithm",
+				blog_cat_2: "Machine Learning",
+				blog_cat_3: "Tech",
+				blog_title_1: "What is the best solution to Add Two Numbers",
+				blog_title_2: "A Possible Way to Remove Watermark perfectly",
+				blog_title_3: "Comparison between Machine Learning Algorithms",
+				contact_title: "Get in touch",
+				contact_phone: "Phone",
+				contact_email: "Email address",
+				contact_location: "Location",
+				form_name: "Your name",
+				form_email: "Email address",
+				form_subject: "Subject",
+				form_message: "Message",
+				send_message: "Send Message"
+			}
+		};
+
+		function setLang(lang) {
+			var dict = i18nMap[lang] || i18nMap.zh;
+			document.documentElement.lang = lang === "zh" ? "zh-CN" : "en-US";
+			document.title = lang === "zh" ? "鞠桥丹 - Personal Resume" : "Qiaodan Ju - Personal Resume";
+			document.querySelectorAll("[data-i18n]").forEach(function (el) {
+				var key = el.getAttribute("data-i18n");
+				if (dict[key]) {
+					el.textContent = dict[key];
+				}
+			});
+			document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+				var key = el.getAttribute("data-i18n-placeholder");
+				if (dict[key]) {
+					el.setAttribute("placeholder", dict[key]);
+				}
+			});
+			document.querySelectorAll(".lang-zh").forEach(function (el) {
+				el.classList.toggle("lang-visible", lang === "zh");
+			});
+			document.querySelectorAll(".lang-en").forEach(function (el) {
+				el.classList.toggle("lang-visible", lang === "en");
+			});
+			document.querySelectorAll(".lang-toggle").forEach(function (el) {
+				el.classList.toggle("active", el.getAttribute("data-lang") === lang);
+			});
+		}
+
+		document.querySelectorAll(".lang-toggle").forEach(function (btn) {
+			btn.addEventListener("click", function () {
+				setLang(btn.getAttribute("data-lang"));
+			});
+		});
+
+		setLang("zh");
+	})();
+</script>
 
 </body>
 </html>
