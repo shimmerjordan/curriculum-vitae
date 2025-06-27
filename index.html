@@ -89,7 +89,7 @@
 				</ul>
 
 				<!-- copyright -->
-				<span class="copyright">© 2022 Qiaodan Ju</span>
+				<span class="copyright">©Qiaodan Ju</span>
 			</div>
 		</div>
 	</header>
@@ -150,7 +150,7 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">Python</h4>
+							<h4 class="float-left mb-3 mt-0">C++</h4>
 							<span class="float-right">95%</span>
 						</div>
 						<div class="progress">
@@ -165,7 +165,7 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">UE引擎</h4>
+							<h4 class="float-left mb-3 mt-0">Python</h4>
 							<span class="float-right">90%</span>
 						</div>
 						<div class="progress">
@@ -180,7 +180,7 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">C++</h4>
+							<h4 class="float-left mb-3 mt-0">UE5</h4>
 							<span class="float-right">60%</span>
 						</div>
 						<div class="progress">
@@ -195,7 +195,7 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">U3D</h4>
+							<h4 class="float-left mb-3 mt-0">RAG/AI Agent</h4>
 							<span class="float-right">70%</span>
 						</div>
 						<div class="progress">
@@ -244,20 +244,30 @@
 				
 				<div class="entry">
 					<div class="title">
-						<span>02/2023 - Present</span>
+						<span>02/2023 - 06/2025</span>
 					</div>
 					<div class="body">
 						<h4 class="mt-0">Huawei Technologies Co., Ltd</h4>
-						<h6>Wireless Communications Dept</h6>
-						<p>Software Development Engineer</p>
-						<li>Lead the design and development of multiple failure mode embedded plug-in modularization for automated test factory, using AI to iteratively output non-product problem confidence based on historical data and terminal and base station characteristics, and sinking into product test line as well as solution test process to improve test efficiency by 5-10 man-days/month.</li>
-						<li>Independently undertook the design and development of the front and back end of the visualization portal and its database for the defense line factory, and was awarded the institute level QCC.</li>
-						<li>Participated in use case analysis and line of defense construction for each iteration of millimeter wave products, with 0 product issue outflows, and sunk multiple general efficiency tools.</li>
+						<h6>终端云</h6>
+						<p>负责多款DAU>500w头部手游（包括QQ飞车、魂斗罗、原神等）的引擎/客户端鸿蒙化，首发完整度95%</p>
+						<li>完成vulkan、vsync、折叠屏开合等渲染模块适配；</li>
+						<li>主导SDK（wwise、glcoud、webcamera等）及出包CICD的鸿蒙适配、重编译与集成;</li>
+						<li>解决卡帧发热关键问题，设计并接入CPU负载均衡策略，达成高压测试稳定60帧，峰值温度下降7℃</li>
+						<p>深度参与UTU重点模块：动画、脚本、视口渲染模块的迁移，完成AngryBot所有场景的95%资产及特效迁移</p>
+						<li>设计并落地高并发导入导出框架，下沉高可拓展Unity实例序列化插件，支持十万级资产数量30s导出；</li>
+						<li>负责动画状态机，解决在U3状态机的导出以及UE侧嵌套状态机、分层状态机等兼容性问题；</li>
+						<li>主导UE侧U3脚本运行环境的方案设计与实现，利用IL注入实现U3属性/类的UE侧反射，优化胶水层实现以解决性能问题，最终Mono环境运行时与xlua脚本实现方案综合性能损失不超过2%；</li>
+						<li>负责UE相机系统的改造，以及 CineMachine 插件及其周边脚本的UE侧适配。实现CineMachine逻辑在UE侧的100%复用以及周边模块的90%复用。在UE重建的视口渲染模块中减少技美与客户端的85%工作量。</li>
 
-						<h6>Terminal Dept</h6>
-						<p>Software Development Engineer</p>
-						<li>Led the animation system interaction between U3 engine and UE, lightly customized UE5 engine to reach compatibility with one-click resource import on U3 side.</li>
-						<li>Participate in XXXX and XXX and other Tencent headline games (Unity engine), such as engine hongmongization, client hongmongization and pipeline construction and other adaptation work.</li>
+
+						<h6>无线</h6>
+						<p>主导自动测试框架中故障模式的开发与AI驱动集成</p>
+						<li>设计异步分析与冗余剪枝架构，在此框架下落地基站配置残留、脚本劣化、证书服务异常等故障模式。</li>
+						<li>主导AI接入故障模式，设计Xgboost + RAG双头分析模型。基于Celery部署优先级驱动的多进程并发推理流水线，能在12h内完成工厂3w用例的失败（峰值30%失败）分析。综合节省人力50%，防线成功率与稳定性提升60%，获研究所QCC</li>
+						<p>承担防线工厂的可视化门户前后端及测试框架公共API的开发</p>
+						<li>承载工厂用例执行详情、防线健康监控的回显，并以版本和迭代周期为颗粒度提供入厂退厂等功能;</li>
+						<li>设计并落地节电策略，端到端部署负载均衡解决方案。工作日日均节电5k度，休息日日均9k度。</li>
+						<li>负责自动测试框架中公共API开发，包括云台与机械手等设备的通信与控制接口暴露。</li>
 					</div>
 				</div>
 			
