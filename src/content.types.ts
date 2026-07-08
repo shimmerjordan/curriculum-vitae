@@ -28,6 +28,18 @@ export interface Edu {
   period: string;
 }
 
+// A hidden "story behind the keyword" card, revealed when a reader clicks a
+// dotted term inside a bullet. Reference it from bullet text with the markup
+// [[displayed words|tipId]] — the tipId keys into Dict.tips. Fill only the
+// fields you have; the card renders whichever are present.
+export interface Tip {
+  label: string;     // card title
+  pain?: string;     // 业务痛点 — the problem behind the work
+  decision?: string; // 技术决策 / 决策过程 — why this over the alternatives
+  detail?: string;   // 实操细节 — what problem, how solved
+  iterate?: string;  // 瑕疵 & 迭代思路 — critical thinking, what's next
+}
+
 export interface Dict {
   profile: {
     name: string;
@@ -59,10 +71,16 @@ export interface Dict {
     awards: string;
     focusLabel: string;
     footerNote: string;
+    tipHint: string;      // small note telling readers the dotted terms are clickable
+    tipPain: string;      // section header inside a tip card
+    tipDecision: string;
+    tipDetail: string;
+    tipIterate: string;
   };
   experience: Job[];
   projects: Project[];
   education: Edu[];
   awards: string[];
   stats: { value: string; label: string }[];
+  tips: Record<string, Tip>;   // keyword-tip cards, keyed by the id used in [[…|id]] markup
 }

@@ -1,5 +1,6 @@
 import FadeIn from "./ui/FadeIn";
 import SectionHeading from "./SectionHeading";
+import RichText from "./ui/KeywordTip";
 import { useI18n } from "../i18n";
 
 export default function Experience() {
@@ -15,6 +16,9 @@ export default function Experience() {
           {c.ui.experienceKicker}
         </FadeIn>
         <SectionHeading align="left">{c.nav.experience}</SectionHeading>
+        <FadeIn as="p" className="mt-5 max-w-xl text-sm leading-relaxed text-white/45">
+          {c.ui.tipHint}
+        </FadeIn>
 
         <div className="mt-16 md:mt-24">
           {c.experience.map((job, i) => (
@@ -53,9 +57,11 @@ export default function Experience() {
                 {job.bullets.map((b, bi) => (
                   <li key={bi} className="flex gap-4">
                     <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-[#b600a8] to-[#be4c00]" />
-                    <p className="text-lg leading-relaxed text-white/75 md:text-xl">
-                      {b}
-                    </p>
+                    <RichText
+                      text={b}
+                      className="text-lg leading-relaxed text-white/75 md:text-xl"
+                    />
+
                   </li>
                 ))}
               </ul>

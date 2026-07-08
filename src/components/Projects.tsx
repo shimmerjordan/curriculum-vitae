@@ -3,23 +3,29 @@ import { motion, useScroll, useTransform, type MotionValue } from "framer-motion
 import {
   type LucideIcon,
   Package,
-  Bot,
-  Gamepad2,
-  Cpu,
-  LineChart,
+  Globe,
+  Boxes,
+  Wrench,
+  Clapperboard,
+  Network,
+  BarChart3,
   ArrowUpRight,
 } from "lucide-react";
 import FadeIn from "./ui/FadeIn";
 import SectionHeading from "./SectionHeading";
+import RichText from "./ui/KeywordTip";
 import { PROJECTS_META, type Project } from "../content";
 import { useI18n } from "../i18n";
 
+// keys referenced by PROJECTS_META[].icon in src/content.ts
 const ICONS: Record<string, LucideIcon> = {
   Package,
-  Bot,
-  Gamepad2,
-  Cpu,
-  LineChart,
+  Globe,
+  Boxes,
+  Wrench,
+  Clapperboard,
+  Network,
+  BarChart3,
 };
 
 function Card({
@@ -63,7 +69,7 @@ function Card({
               {project.name}
             </h3>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-              {project.summary}
+              <RichText text={project.summary} />
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {project.tags.map((t) => (
