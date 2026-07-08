@@ -69,9 +69,7 @@ export const PROJECTS_META = [
   { accent: "linear-gradient(135deg,#4E85BF 0%,#b600a8 100%)", icon: "Globe",        image: "", link: "https://explore-travel-three.vercel.app" },
   { accent: "linear-gradient(135deg,#b600a8 0%,#7621b0 100%)", icon: "Boxes",        image: "", link: "https://github.com/shimmerjordan/home_repo_git" },
   { accent: "linear-gradient(135deg,#7621b0 0%,#4E85BF 100%)", icon: "Wrench",       image: "", link: "https://github.com/shimmerjordan/self-host-fusion360-MCP" },
-  { accent: "linear-gradient(135deg,#be4c00 0%,#b600a8 100%)", icon: "Clapperboard", image: "", link: "https://github.com/shimmerjordan/transition-video-generator" },
-  { accent: "linear-gradient(135deg,#89AACC 0%,#4E85BF 100%)", icon: "Network",      image: "", link: "https://github.com/shimmerjordan/cc-trans" },
-  { accent: "linear-gradient(135deg,#4E85BF 0%,#7621b0 100%)", icon: "BarChart3",    image: "", link: "https://github.com/shimmerjordan/github-statis" },
+  { accent: "linear-gradient(135deg,#be4c00 0%,#7621b0 100%)", icon: "Heart",        image: "", link: "https://ab-ad-wedd-card.vercel.app" },
 ] as const;
 
 // ---- CONTENT (all translatable text) ----------------------------------------
@@ -203,31 +201,13 @@ export const CONTENT: Record<Lang, Dict> = {
         tags: ["MCP", "Python", "Docker", "Claude", "CAD"],
       },
       {
-        name: "Transition Video Generator",
-        kind: "Personal · AI Pipeline",
+        name: "Stardew Wedding Invitation",
+        kind: "Personal · Playable Invite",
         period: "2026",
-        metric: "local ⇄ AI",
+        metric: "1 file · 0 deps",
         summary:
-          "Turns a dance clip into a beat-synced, scene-swapping transition video — per-person outfit changes and relighting composited to look shot on location. Built as a [[configurable orchestrator|artifactswap]]: each of the 8 pipeline stages (beats → camera → matte → plates → garment → relight → composite → assemble) can run a local implementation or a paid AI product, swappable behind one standard artifact format, all driven from a web config UI.",
-        tags: ["Python", "AI Pipeline", "FFmpeg", "Web UI"],
-      },
-      {
-        name: "cc-trans",
-        kind: "Personal · Dev Infra",
-        period: "2026",
-        metric: "Zero-dependency",
-        summary:
-          "A zero-dependency Anthropic API reverse proxy: Claude Code on any remote machine points at your server, which validates a per-device token and swaps in your real credentials before forwarding. Defaults to forwarding [[your Claude subscription's OAuth session|oauthfwd]] (auto-refreshing the token) instead of an API key, with streaming pass-through and a web admin console — traffic charts, live logs, token issue/revoke — running on nothing but Node ≥ 18.",
-        tags: ["Node.js", "Reverse Proxy", "OAuth", "SSE"],
-      },
-      {
-        name: "github-statis",
-        kind: "Personal · Automation",
-        period: "2026",
-        metric: "Serverless",
-        summary:
-          "A serverless GitHub stats generator: a scheduled GitHub Action runs the analysis with your own token — reaching [[private-repo contributions|statspriv]] an external service can't — and commits refreshed SVG cards (languages, activity, totals) straight back into the repo for embedding in a profile README.",
-        tags: ["Python", "GitHub Actions", "SVG", "async"],
+          "A wedding invitation you can actually play — a Stardew-Valley-style pixel game in a [[single zero-build, zero-dependency HTML file|wedding]]. Guests roam the farm as bride or groom and unlock the invite by farming, fishing (a full three-stage catch minigame), mining gems for the museum and raising affection — then hold the ceremony in the wedding hall, where a GET-param highlights their own banquet table. Everything is config-driven (names, story branches, exhibits, seating), RSVP is collected backend-less through a third-party form, and a hidden DEBUG mode is a visual editor for exhibits, seating and per-guest share links.",
+        tags: ["Vanilla JS", "Game Loop", "Pixel Art", "Zero-Build", "Config-Driven"],
       },
     ],
     education: [
@@ -325,26 +305,12 @@ export const CONTENT: Record<Lang, Dict> = {
         detail: "Docker only containerizes the server (Fusion is a desktop GUI, can't be containerized) — it reaches the host add-in via host.docker.internal; a `doctor` command diagnoses the single most common misconfig.",
         iterate: "The generic-API hatch is powerful but blunt (arbitrary calls); I'd rather auto-generate more typed wrappers so people reach for it less.",
       },
-      artifactswap: {
-        label: "Local tool vs paid AI, swappable per step",
-        pain: "Every stage (matte, relight, garment swap…) has a cheap-rough local tool and an expensive-great paid AI — and you want to mix them without rewiring the pipeline.",
-        decision: "I defined one standard artifact format (frame PNGs + JSON) between every stage, so each step's provider is `local` or `product:<name>` and they're freely interchangeable behind the same contract.",
-        detail: "8 stages beats→…→assemble, each reading/writing fixed paths; a config.yaml + web UI pick the provider per step.",
-        iterate: "The handoff to paid products is still semi-manual, and quality varies wildly by provider — the artifact contract needs tighter validation than it has today.",
-      },
-      oauthfwd: {
-        label: "Use the subscription, not an API key",
-        pain: "I wanted Claude Code on remote machines to use my subscription, not a metered API key — but that auth is an OAuth session, not a portable key.",
-        decision: "Forward the local OAuth session: read the credentials, attach the bearer + oauth-beta header, auto-refresh on expiry and write it back — so remotes authenticate with a device token I issue and never see my real creds.",
-        detail: "Zero third-party deps (Node ≥ 18); streaming pass-through; a web admin console with traffic charts and per-device token issue / revoke.",
-        iterate: "It's a personal-use tool — I haven't hardened it for untrusted clients (rate-limits, abuse), so it stays behind my own network.",
-      },
-      statspriv: {
-        label: "Stats a third-party service can't see",
-        pain: "Public profile stats (stars, pinned repos) badly understate real contribution — most of mine lives in private repos an external service can never read.",
-        decision: "Run the analysis yourself on GitHub Actions with your own token, so it reaches private-repo contributions; no server, and the images commit back into the repo.",
-        detail: "A scheduled Action regenerates SVG cards (languages, activity, totals) for embedding in a profile README.",
-        iterate: "GitHub's stats API is flaky and under-counts until it warms its cache; the numbers drift, so I flag that rather than pretend they're exact.",
+      wedding: {
+        label: "A wedding invite that's a whole game",
+        pain: "A static invitation card is forgettable — I wanted guests to actually do something, and to reuse it for everyone without a backend or a build step.",
+        decision: "One self-contained HTML file: a hand-rolled Stardew-style game loop (farming / fishing / mining / affection + an economy) in vanilla JS — no framework, no build, no server. Everything variable (names, story branches, museum exhibits, seating) is config, and each guest gets a personalised link via GET params (`?gn=name&gt=table`).",
+        detail: "Backend-less RSVP piggybacks on a third-party form; a hidden DEBUG mode (tap the version 10×) is a visual editor that exports a config JSON deployed alongside the file; per-guest table highlighting comes straight from the query string.",
+        iterate: "One giant vanilla-JS file is a joy to ship but a pain to maintain — the game state grew organically, and to push it further I'd want a real state model and a scene system.",
       },
     },
   },
@@ -476,31 +442,13 @@ export const CONTENT: Record<Lang, Dict> = {
         tags: ["MCP", "Python", "Docker", "Claude", "CAD"],
       },
       {
-        name: "转场视频生成器",
-        kind: "个人 · AI 管线",
+        name: "星露谷婚礼请帖",
+        kind: "个人 · 可玩请帖",
         period: "2026",
-        metric: "本地 ⇄ AI",
+        metric: "单文件 · 零依赖",
         summary:
-          "把一段跳舞视频变成卡点换景的转场大片——按人换装、重打光,合成得像在每个场景当场实拍。做成一个[[可配置编排器|artifactswap]]:8 段管线(卡点→运镜→抠像→背景→换装→重光→合成→拼接)每一步都能在「本地实现」与「付费 AI 产品」之间自由切换,靠统一标准件对接,并配一个 Web 配置前端。",
-        tags: ["Python", "AI 管线", "FFmpeg", "Web 前端"],
-      },
-      {
-        name: "cc-trans",
-        kind: "个人 · 开发基建",
-        period: "2026",
-        metric: "零依赖",
-        summary:
-          "零依赖的 Anthropic API 反向代理:任意远端机器上的 Claude Code 指向你的服务器,服务器校验每台设备的令牌后换上你的真实凭证再转发。默认转发 [[Claude 订阅的 OAuth 登录态|oauthfwd]](自动刷新 token)而非 API key,支持流式透传与一个 Web 管理台——流量图表、实时日志、令牌签发 / 吊销——运行只需 Node ≥ 18。",
-        tags: ["Node.js", "反向代理", "OAuth", "SSE"],
-      },
-      {
-        name: "github-statis",
-        kind: "个人 · 自动化",
-        period: "2026",
-        metric: "无服务器",
-        summary:
-          "无服务器的 GitHub 统计生成器:定时 GitHub Action 用你自己的令牌跑分析——能覆盖外部服务拿不到的[[私有仓库贡献|statspriv]]——并把刷新后的 SVG 卡片(语言、活跃度、总量)直接提交回仓库,便于嵌进 Profile README。",
-        tags: ["Python", "GitHub Actions", "SVG", "async"],
+          "一份可以玩的婚礼请帖——星露谷像素风小游戏,[[纯前端单文件、零构建零依赖|wedding]]。宾客扮新郎 / 新娘在农场走动,靠种田、钓鱼(完整三段钓鱼小游戏)、挖矿捐宝石、刷好感,一步步解锁请帖,最终在婚礼殿堂完成仪式——并由 GET 参数高亮自己的喜宴桌位。一切皆可配置(姓名、剧情分支、展品、桌位),RSVP 回执借第三方问卷零后端收集,还藏了个 DEBUG 模式内置可视化编辑器(展品 / 桌位 / 每位宾客专属分享链接)。",
+        tags: ["原生 JS", "游戏循环", "像素美术", "零构建", "配置驱动"],
       },
     ],
     education: [
@@ -599,26 +547,12 @@ export const CONTENT: Record<Lang, Dict> = {
         detail: "Docker 只容器化服务器(Fusion 是桌面 GUI,无法容器化)——靠 host.docker.internal 访问宿主插件;一个 `doctor` 命令诊断最常见的配置错误。",
         iterate: "通用 API 逃生舱强大但太钝(任意调用);我更想自动生成更多带类型的封装,让人少用它。",
       },
-      artifactswap: {
-        label: "本地工具 vs 付费 AI,每步可换",
-        pain: "每一步(抠像、重打光、换装……)都有便宜但糙的本地工具和贵但好的付费 AI——你想混用,却不想重接管线。",
-        decision: "我在每一步之间定义了统一标准件(帧序列 PNG + JSON),于是每步的 provider 要么 `local` 要么 `product:<名>`,在同一契约背后自由互换。",
-        detail: "8 段管线 卡点→…→拼接,每步读写固定路径;config.yaml + Web 前端按步挑选 provider。",
-        iterate: "对接付费产品仍半自动,而各家质量参差很大——标准件契约需要比现在更严的校验。",
-      },
-      oauthfwd: {
-        label: "用订阅,而不是 API key",
-        pain: "我想让远端机器上的 Claude Code 用我的订阅,而不是计量的 API key——但那套鉴权是 OAuth 登录态,不是可携带的 key。",
-        decision: "转发本机的 OAuth 登录态:读取凭证、附上 bearer + oauth-beta 头、过期自动刷新并写回——于是远端用我签发的设备令牌鉴权,永远看不到我的真实凭证。",
-        detail: "零第三方依赖(Node ≥ 18);流式透传;带流量图表与按设备令牌签发 / 吊销的 Web 管理台。",
-        iterate: "这是自用工具——我没有为不可信客户端做加固(限流、防滥用),所以它只待在我自己的网络里。",
-      },
-      statspriv: {
-        label: "第三方服务看不到的统计",
-        pain: "公开的资料页统计(star、置顶仓库)严重低估真实贡献——我的大部分贡献在外部服务永远读不到的私有仓库里。",
-        decision: "在 GitHub Actions 上用你自己的令牌自己跑分析,于是能覆盖私有仓库贡献;不需要服务器,生成的图片直接提交回仓库。",
-        detail: "定时 Action 重新生成 SVG 卡片(语言、活跃度、总量),便于嵌进 Profile README。",
-        iterate: "GitHub 的统计 API 不稳,缓存热起来之前会少算;数字会漂,所以我如实标注,而不是假装它精确。",
+      wedding: {
+        label: "一张请帖,其实是一整个游戏",
+        pain: "静态请帖卡片转身就忘;我想让宾客真的能『做点什么』,还要能零后端、零构建地复用给每一位来宾。",
+        decision: "做成一个自包含的 HTML 文件——用原生 JS 手写的星露谷式游戏循环(种田 / 钓鱼 / 挖矿 / 好感 + 经济系统),无框架、无构建、无服务器。一切可变的东西(姓名、剧情分支、博物馆展品、桌位)都是配置,每位宾客用 GET 参数拿到专属链接(`?gn=姓名&gt=桌号`)。",
+        detail: "零后端 RSVP 借第三方问卷;一个隐藏 DEBUG 模式(连点版本号 10 下)是可视化编辑器,导出配置 JSON 与文件一起部署;桌位从 query string 直接高亮。",
+        iterate: "一个巨大的原生 JS 单文件写着爽、维护起来疼——游戏状态是长出来的,若要继续做大,得上真正的状态模型与场景系统。",
       },
     },
   },

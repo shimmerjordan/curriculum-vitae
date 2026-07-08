@@ -6,9 +6,7 @@ import {
   Globe,
   Boxes,
   Wrench,
-  Clapperboard,
-  Network,
-  BarChart3,
+  Heart,
   ArrowUpRight,
 } from "lucide-react";
 import FadeIn from "./ui/FadeIn";
@@ -23,9 +21,7 @@ const ICONS: Record<string, LucideIcon> = {
   Globe,
   Boxes,
   Wrench,
-  Clapperboard,
-  Network,
-  BarChart3,
+  Heart,
 };
 
 function Card({
